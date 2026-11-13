@@ -1,6 +1,7 @@
 
 import pyray as rl
 from pyray import Vector2
+from raylib import KEY_R
 
 from lander_can.lander import Lander
 
@@ -19,9 +20,12 @@ class GameplayScreen(BaseScreen):
         dt = rl.get_frame_time()
         self.lander.update(dt)
 
+        if rl.is_key_pressed(KEY_R):
+            self.lander = Lander(Vector2(10.0, 10.0))
+
     def draw(self, width: int, height: int):
 
         # draw lander can
         self.lander.draw()
         # draw terrian
-        # self.terrain.draw()
+        self.terrain.draw()
