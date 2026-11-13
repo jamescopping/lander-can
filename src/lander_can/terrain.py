@@ -3,7 +3,7 @@
 from datetime import datetime
 
 import pyray as rl
-from pyray import WHITE, Vector2
+from pyray import GRAY, Vector2
 
 
 class Terrain:
@@ -17,7 +17,7 @@ class Terrain:
         self.points.clear()
         scale_factor = 50
         delta_x = 30
-        current_height = rl.get_random_value(self.height, self.height + 100)
+        current_height = rl.get_random_value(self.height, self.height - 100)
 
         for x in range(0, self.width + delta_x, delta_x):
             self.points.append(Vector2(x, (int)(current_height)))
@@ -30,4 +30,4 @@ class Terrain:
             # rl.draw_pixel((int)(self.points[p].x), (int)(self.points[p].y), WHITE)
             if p == 0:
                 continue
-            rl.draw_line_v(self.points[p - 1], self.points[p], WHITE)
+            rl.draw_line_v(self.points[p - 1], self.points[p], GRAY)

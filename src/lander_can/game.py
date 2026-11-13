@@ -199,7 +199,7 @@ class Game:
         if self.on_transition:
             self._draw_transition()
 
-        rl.draw_fps(10, 10)
+        # rl.draw_fps(10, 10)
 
         rl.end_texture_mode()
 
